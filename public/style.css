@@ -1,0 +1,48 @@
+body {
+  background-color: black;
+  color: aqua;
+  font-family: monospace;
+  font-size: 1.25em;
+}
+
+p {
+  margin-top: 0;
+  word-break: break-all;
+}
+
+p.command {
+  white-space: pre-wrap;
+}
+
+p.response {
+  margin-bottom: 0;
+}
+
+input {
+  background-color: black;
+  border: none;
+  caret-color: transparent;
+  color: aqua;
+  flex: 1;
+  font-family: monospace;
+  font-size: 1em;
+}
+
+.all-responses{
+  margin-bottom: 1em;
+}
+
+.text-input {
+  display: flex;
+  flex: 1;
+  margin-top: 0;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+*:focus {
+  outline: none;
+}
