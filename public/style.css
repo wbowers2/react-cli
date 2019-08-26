@@ -5,6 +5,10 @@ body {
   font-size: 1.25em;
 }
 
+a {
+  color: white;
+}
+
 p {
   margin-top: 0;
   word-break: break-all;
