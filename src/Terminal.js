@@ -11,6 +11,7 @@ const Terminal = () => {
         pair.command = "help";
         pair.response = commandMap.get("help");
         setHistory([pair]);
+        window.onclick = () => setFocus();
     }, [])
 
     useEffect(() => {
@@ -50,9 +51,9 @@ const Terminal = () => {
                         autoComplete="off"
                         autoFocus
                         id="input"
-                        onBlur={setFocus}
                         onChange={handleChange}
                         onKeyPress={handleKeyPress}
+                        spellCheck="false"
                         type="text"
                         value={input}
                     />
