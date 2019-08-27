@@ -22,14 +22,15 @@ const Terminal = () => {
     }
 
     const handleKeyPress = event => {
-        if(event.key === 'Enter') {
+        if (event.key === 'Enter') {
             const pair = {};
             pair.command = input;
             const trimmedCommand = pair.command.trim();
-            pair.response = commandMap.get(trimmedCommand);
-            if (trimmedCommand === "date") pair.response = [new Date().toString()];
-            if (trimmedCommand.substring(0, 5) === "echo ") pair.response = [trimmedCommand.substring(5)];
-            trimmedCommand === "clear" ? setHistory([]) : setHistory(history.concat(pair));
+            const trimmedCommandLower = trimmedCommand.toLowerCase();
+            pair.response = commandMap.get(trimmedCommandLower);
+            if (trimmedCommandLower === "date") pair.response = [new Date().toString()];
+            if (trimmedCommandLower.substring(0, 5) === "echo ") pair.response = [trimmedCommand.substring(5)];
+            trimmedCommandLower === "clear" ? setHistory([]) : setHistory(history.concat(pair));
             setInput("");
             event.preventDefault();
         }
@@ -38,22 +39,22 @@ const Terminal = () => {
     const setFocus = () => {
         document.getElementById('input').focus();
     }
-    
+
     return (
         <div className="flex-container">
-            <History addHistory={history}/>
+            <History addHistory={history} />
             <form className="text-input">
                 <label className="text-input">
                     ~$&nbsp;
-                    <input 
-                    autoComplete="off"
-                    autoFocus
-                    id="input"
-                    onBlur={setFocus}
-                    onChange={handleChange}
-                    onKeyPress={handleKeyPress}
-                    type="text"
-                    value={input}
+                    <input
+                        autoComplete="off"
+                        autoFocus
+                        id="input"
+                        onBlur={setFocus}
+                        onChange={handleChange}
+                        onKeyPress={handleKeyPress}
+                        type="text"
+                        value={input}
                     />
                 </label>
             </form>
