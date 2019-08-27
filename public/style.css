@@ -23,13 +23,14 @@ p.response {
 }
 
 input {
-  background-color: black;
+  background-color: inherit;
   border: none;
   caret-color: transparent;
-  color: aqua;
+  color: inherit;
   flex: 1;
-  font-family: monospace;
-  font-size: 1em;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
 }
 
 .all-responses{
